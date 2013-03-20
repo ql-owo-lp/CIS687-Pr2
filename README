@@ -1,0 +1,29 @@
+
+Package Dependency Analysis  v0.1
+ - Kevin Wang (kevixw@gmail.com)
+   Spring 2013 / Syracuse University / CIS 687 Pr#2
+   
+## Overview =======================================
+This is a program which analyze the dependency relationship among code files.
+
+## Commands ======================================
+
+./Debug/Exec.exe [\R] "Directory path" [file pattern: "*.cpp", "*.h" etc.] [file pattern 2] ...
+
+By specificing \R, we will search sub-directories under the path specificed.
+
+If not specific file pattern, *.h will be used by default
+
+## NOTES =====================================
+This program basically can read and distinguish every variable and types, also distinguish the
+variable effective scope.
+
+For example, when a type "A" is defined in file1.h, a type also named "A" is defined in file2.cpp,
+even if file2.cpp includes file1.h, it will not be recognized as file2.cpp depends on file1.h, as it does
+not use the "A" defined in file1.h
+
+This program also distinguishes nested structure such nested namespace and class.
+
+Also, this program checks only include file instead of all files.  Thus it is more precise.
+
+Due to above features, this program runs a little bit slower as its result is more accurate.

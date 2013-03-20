@@ -1,0 +1,28 @@
+The file dependency result of these test files should be:
+
+A depends on
+	B
+	C
+	
+	
+B depends on
+	A
+	
+C depends on
+	D
+
+D depends on
+	A
+	B
+
+E depends on
+	B
+
+Strong component will be:
+	A -> B-> C -> D
+	E
+	
+	
+If any of these dependency is not detected, then maybe you are in trouble
+
+Kevin Wang 3/7/2013
